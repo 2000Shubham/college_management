@@ -1,0 +1,32 @@
+
+/* .dashboard-card {
+    background: #fff;
+  
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+} */
+
+.dashboard-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dashboard-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.dashboard-card .card-footer {
+    font-size: 14px;
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.dashboard-card .card-footer:hover {
+    color: #0056b3;
+}

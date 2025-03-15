@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Create Page</title>
+</head>
+
+<body>
+    <div>
+        <div class="p-5">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h1 class="text-center">Student Create</h1>
+                </div>
+                <div class="card-body">
+
+                    <div *ngIf="isLoading; else elseForm">
+                        <app-loader :title="loadingTitle" />
+                    </div>
+                    <ng-template #elseForm>
+
+                        <form [formGroup]="studentForm">
+
+                            <div class="mb-2">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput formControlName="name">
+                                    <mat-error *ngIf="studentForm.get('name')?.hasError('required')">Name is
+                                        required</mat-error>
+                                    <mat-error *ngIf="studentForm.get('name')?.hasError('minlength')">Minimum 3
+                                        characters
+                                        required</mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="mb-3">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Course</mat-label>
+                                    <input matInput formControlName="course">
+                                    <mat-error *ngIf="studentForm.get('course')?.hasError('required')">Name is
+                                        required</mat-error>
+                                    <mat-error *ngIf="studentForm.get('course')?.hasError('minlength')">Minimum 3
+                                        characters
+                                        required</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="mb-3">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput type="email" formControlName="email">
+                                    <mat-error *ngIf="studentForm.get('email')?.hasError('required')">
+                                        Email is required
+                                      </mat-error>
+                                      <mat-error *ngIf="studentForm.get('email')?.hasError('email')">
+                                        Enter a valid email address
+                                      </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="mb-3">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Phone</mat-label>
+                                    <input matInput formControlName="phone" maxlength="10">
+                                    <mat-error *ngIf="studentForm.get('phone')?.hasError('required')">
+                                        Phone number is required
+                                      </mat-error>
+                                      <mat-error *ngIf="studentForm.get('phone')?.hasError('pattern')">
+                                        Enter a valid phone number
+                                      </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <button mat-raised-button color="primary" class="w-40 text-center" type="submit"
+                                    (click)="saveStudent()">Save</button>
+                            </div>
+
+                        </form>
+                    </ng-template>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

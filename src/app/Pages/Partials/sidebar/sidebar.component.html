@@ -1,0 +1,83 @@
+<mat-drawer-container class="example-container mt-0" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" style="background: #3e66a9">
+    <div>
+        <img src="assets/imgpsh_fullsize_anim (6).png" alt="Logo" style="height: 75px; width: auto; margin-right: 10px;" />
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a routerLink="/Dashboard" class="menu-item ">
+            <mat-icon>home</mat-icon>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a routerLink="/about" class="menu-item">
+            <mat-icon>Users</mat-icon>
+            Admin
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" class="menu-item">
+            <mat-icon>contact_page</mat-icon>
+            Contact
+          </a>
+        </li>
+        <li>
+          <a routerLink="/studentlist" class="menu-item">
+            <mat-icon>group</mat-icon>
+            Student List
+          </a>
+        </li>
+        <li>
+          <a routerLink="/settings" class="menu-item">
+            <mat-icon>settings</mat-icon>
+            Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div class="container">
+          <button mat-mini-fab (click)="drawer.toggle()" class="me-2">
+            <mat-icon>menu</mat-icon>
+          </button>
+
+
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" routerLink="/Dashboard">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/studentlist">StudentList</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+      </nav>
+    </div>
+
+    <!-- <app-student-page></app-student-page> -->
+        <router-outlet></router-outlet> 
+    
+  </div>
+</mat-drawer-container>

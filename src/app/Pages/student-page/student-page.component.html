@@ -1,0 +1,52 @@
+<div>
+    <div class="p-4 container">
+        <div class="card shadow border-0">
+            <div class="card-header">
+                <h4>Student List
+                        <button mat-raised-button color="primary" routerLink="/student/create" class="w-40 float-end"
+                        type="submit">Add Student</button>
+                </h4>
+            </div>
+            <div class="card-body ">
+                <table class="table table-striped table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let student of students; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{student.name}}</td>
+                            <td>{{student.course}}</td>
+                            <td>{{student.email}}</td>
+                            <td>{{student.phone}}</td>
+                            <td>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="m-2">
+                                        <a (click)="editStudent(student.id)"><mat-icon style="color: blue" aria-hidden="false" aria-label="Example edit icon"
+                                                fontIcon="edit"></mat-icon></a>
+                                    </div>
+                                    <div class="m-2">
+                                        <a (click)="deleteStudent(student.id)">
+                                            <mat-icon style="color: red" aria-hidden="false"
+                                                aria-label="Example delete icon" fontIcon="delete"></mat-icon>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
